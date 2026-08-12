@@ -17,6 +17,10 @@ npx sharp-cli -i source/jumbotron.jpg -o jumbotron.webp -q 80 resize 2560       
 npx sharp-cli -i source/jumbotron.png -o jumbotron.webp --lossless resize 2560   # graphics, pixel-identical
 ```
 
+Is the result still over 500 KB? Just lower `-q` until it fits — a jumbotron
+is a background photo behind a text card, which hides compression artifacts
+so well that even `-q 25` can look unchanged in practice.
+
 ## Generating the favicon.ico
 
 **From an SVG source** (in `source/`) — the `favicon.ico` is written straight
@@ -39,8 +43,15 @@ npx icon-gen -i icons -o . --ico --ico-name favicon --ico-sizes 16,32,48
 npx rimraf icons
 ```
 
-Both produce a single `favicon.ico` containing 16/32/48 px variants while
-preserving transparency.
+For a JPG original, change only the input: `source/favicon.png` becomes
+`source/favicon.jpg` in the three resize commands. The output files must
+stay `icons/16.png`, `icons/32.png` and `icons/48.png` — icon-gen can only
+pack PNGs, so `.jpg` outputs make it error. Note that JPG cannot hold
+transparency, so the icon keeps its solid background — if it should be
+transparent, ask for a PNG or SVG original instead.
+
+Both routes produce a single `favicon.ico` containing 16/32/48 px variants
+while preserving transparency (when the source has it).
 
 ## Alternatives
 
