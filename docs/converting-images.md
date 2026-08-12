@@ -27,8 +27,8 @@ npx icon-gen -i source/favicon.svg -o . --ico --ico-name favicon --ico-sizes 16,
 ```
 
 **From a PNG or JPG source** — icon-gen only accepts SVG input, so first
-create the three sizes, then pack them (delete the temporary `icons/` folder
-afterwards):
+create the three sizes, then pack them (the last command removes the
+temporary `icons/` folder again):
 
 ```
 mkdir icons
@@ -36,6 +36,7 @@ npx sharp-cli -i source/favicon.png -o icons/16.png resize 16 16
 npx sharp-cli -i source/favicon.png -o icons/32.png resize 32 32
 npx sharp-cli -i source/favicon.png -o icons/48.png resize 48 48
 npx icon-gen -i icons -o . --ico --ico-name favicon --ico-sizes 16,32,48
+npx rimraf icons
 ```
 
 Both produce a single `favicon.ico` containing 16/32/48 px variants while
