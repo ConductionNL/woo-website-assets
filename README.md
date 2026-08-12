@@ -28,10 +28,16 @@ other/
 
 ## Conventions
 
-- **Folder names** — the organisation's name in lowercase with hyphens
-  instead of spaces and without diacritics (e.g. `hof-van-twente`,
-  `sudwest-fryslan`). The name becomes part of a live URL, so it must be
-  URL-safe.
+- **Folder names** — the organisation's name in kebab-case: everything
+  lowercase, every separate word joined with a hyphen, no diacritics
+  (Gooise Meren → `gooise-meren`, Hof van Twente → `hof-van-twente`,
+  Súdwest-Fryslân → `sudwest-fryslan`). This is the same kebab-case name
+  the design-token themes are built on: theme packages — in
+  [NL Design System](https://github.com/nl-design-system/themes) and
+  conduction-theme alike — are named `<organisation>-design-tokens`
+  (e.g. `gooise-meren-design-tokens`), so an organisation's folder here
+  always matches its theme name. The name becomes part of a live URL, so it
+  must be URL-safe.
 - **Jumbotron** — fixed name `jumbotron.<ext>`. The template renders it with
   `background-size: cover`, so it is scaled to the full viewport width on any
   screen. Format preference, in order:
@@ -142,6 +148,10 @@ which also accepts a `.png`/`.jpg` as input without the `-density` and
 <https://realfavicongenerator.net> in the browser.
 
 ## Adding a new organisation
+
+Prefer clicking over command lines? There is a step-by-step guide for doing
+all of this on github.com in the browser, no tools required:
+[Adding images through the GitHub website](docs/adding-images-via-github.md).
 
 1. Create a folder in the appropriate category, named after the organisation
    (lowercase, hyphens, no diacritics).
