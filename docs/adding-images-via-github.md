@@ -95,24 +95,37 @@ branch** you just created:
 3. Now navigate to the organisation's folder again, open the `source`
    folder, and click `origin.md`.
 4. Click the **pencil icon** (✏️, top right of the file view) to edit.
-5. Write one bullet per file. Two examples to copy and adapt:
+5. Give each image its own heading and write one bullet per file, labelled
+   by its role: the **Original** is the supplied file in the `source`
+   folder (say who supplied it, and when); the **Served file** is the file
+   in the organisation's folder itself — the one the website uses. Two
+   examples to copy and adapt:
 
    ```markdown
    # Origin
 
-   - jumbotron.webp — supplied by the municipality of Epe, 2026-06-03
-   - favicon.ico — generated from the logo on epe.nl; converted by
-     Conduction, 2026-06-03
+   ## Favicon
+
+   - **Served file** (`favicon.ico`) — generated 2026-06-03 from the logo
+     on [epe.nl](https://www.epe.nl/).
+
+   ## Jumbotron
+
+   - **Original** (`source/jumbotron.jpg`) — supplied 2026-06-03 by the
+     municipality of Epe.
+   - **Served file** (`jumbotron.webp`) — converted by Conduction from the
+     original.
    ```
 
    or, when the banner is a temporary placeholder from the organisation's
    own website:
 
    ```markdown
-   # Origin
+   ## Jumbotron
 
-   - jumbotron.jpg — placeholder taken from https://www.epe.nl/ on
-     2026-06-03, pending an image supplied by the organisation
+   - **Served file** (`jumbotron.jpg`) — placeholder taken 2026-06-03 from
+     [epe.nl](https://www.epe.nl/), pending an image supplied by the
+     organisation.
    ```
 
 6. Click the green **Commit changes...** button. In the window that opens,
