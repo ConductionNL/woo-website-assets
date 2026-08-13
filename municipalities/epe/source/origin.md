@@ -1,8 +1,14 @@
 # Origin
 
+## Favicon
+
+- **Served file** (`favicon.ico`) — taken 2024-04-16 from the
+  municipality's website ([epe.nl](https://www.epe.nl/)), used as-is
+  (no separate original).
+
 ## Jumbotron
 
-- **Served file** (`jumbotron.jpg`) — copied 2026-08-11 as-is from the
-  [ConductionNL/woo-website-epe](https://github.com/ConductionNL/woo-website-epe)
-  repository (byte-identical to the file already serving the live site);
-  original supplier not recorded.
+- **Original** (`source/jumbotron.jpg`) — taken 2024-04-16 from the
+  municipality's website ([epe.nl](https://www.epe.nl/)).
+- **Served file** (`jumbotron.webp`) — converted by Conduction from the
+  original.
