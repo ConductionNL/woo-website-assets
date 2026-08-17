@@ -103,6 +103,15 @@ other/
   - **Served file** (`jumbotron.svg`) — made 2026-08-11 in-house by the
     Conduction frontend team, used as-is.
   ```
+- **AI-generated imagery** — only for fictive demo organisations, never
+  for real ones. Follow the
+  [EU guidance on labelling AI-generated content](https://digital-strategy.ec.europa.eu/en/policies/eu-icons-labelling-ai-generated-content)
+  (AI Act, Article 50): composite the EU "AI generated" icon — the official
+  icons live in [`ai-labels/`](ai-labels/) — visibly into the served file,
+  and keep the unmodified original in `source/`, as it carries the
+  machine-readable AI provenance (content credentials), which conversion
+  strips. Commands in [Converting images](docs/converting-images.md).
+  Record the generation in `origin.md`.
 - **Favicon** — **`favicon.ico` only**. It is the only format that works
   correctly in every browser (Safari does not support SVG favicons and
   JPEG/PNG support varies per browser) and it can hold multiple resolutions
