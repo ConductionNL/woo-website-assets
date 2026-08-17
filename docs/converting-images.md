@@ -53,6 +53,32 @@ transparent, ask for a PNG or SVG original instead.
 Both routes produce a single `favicon.ico` containing 16/32/48 px variants
 while preserving transparency (when the source has it).
 
+## Labelling AI-generated images
+
+AI-generated imagery (only used for fictive demo organisations) must carry
+the EU "AI generated" label visibly in the served file — the conversion to
+WebP strips the machine-readable AI provenance (C2PA content credentials)
+that generators embed, so keep the unmodified original in `source/` and
+bake the visible label into the conversion. The official EU icons live in
+[`ai-labels/`](../ai-labels/) at the repository root.
+
+Scale the label to roughly a tenth of the image width, then composite it
+into the bottom-right corner during conversion — the same command also
+writes a machine-readable AI declaration into the served file's EXIF
+metadata (the last command removes the temporary scaled label again):
+
+```
+npx sharp-cli -i ../../ai-labels/label-ai-generated-black-transparent.png -o label-small.png resize 220
+npx sharp-cli -i source/jumbotron.png -o jumbotron.webp -q 80 --metadata.exif.IFD0.ImageDescription "AI-generated image (EU AI Act, Article 50); IPTC digital source type: trainedAlgorithmicMedia" composite label-small.png --gravity southeast
+npx rimraf label-small.png
+```
+
+Mind the composition rules from the README: on narrow screens the template
+crops the image edges, so when the far corner might be cut off, place the
+label with explicit coordinates instead of `--gravity` (`composite
+label-small.png --left <x> --top <y>`), keeping it roughly 15% away from
+the right edge.
+
 ## Alternatives
 
 [ImageMagick](https://imagemagick.org) (a separate install —
