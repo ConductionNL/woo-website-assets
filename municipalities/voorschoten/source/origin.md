@@ -12,6 +12,9 @@
 ## Jumbotron
 
 - **Original** (`source/jumbotron.png`) — taken 2026-06-29 from the
-  municipality's website ([voorschoten.nl](https://www.voorschoten.nl/)).
+  municipality's website ([voorschoten.nl](https://www.voorschoten.nl/));
+  reworked by Conduction: the red band on the left, which the website
+  renders as an overlay on top of the image, was added into the image
+  itself.
 - **Served file** (`jumbotron.webp`) — converted by Conduction from the
   original.

@@ -8,7 +8,7 @@
 
 ## Jumbotron
 
-- **Original** (`source/jumbotron.jpg`) — supplied 2026-08-12 by the
+- **Original** (`source/jumbotron.jpg`) — supplied 2024-06-25 by the
   municipality of Gooise Meren.
 - **Served file** (`jumbotron.webp`) — converted by Conduction from the
   original.
