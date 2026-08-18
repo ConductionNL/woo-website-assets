@@ -18,8 +18,10 @@ Zuid-Drecht is a fictive municipality, used for demos.
   machine-readable AI provenance (C2PA content credentials).
 - **Served file** (`jumbotron.webp`) — converted by Conduction from the
   original, with the EU "AI generated" label
-  (`ai-labels/label-ai-generated-black-transparent.png`) composited
-  bottom-right and the machine-readable AI declaration (IPTC digital
-  source type `trainedAlgorithmicMedia`) written into the XMP and EXIF
+  (`ai-labels/label-ai-generated-black-transparent.png`) composited over
+  the village skyline in the image's right half, at mid-height, where the
+  template's cropping keeps it in view on desktop-class screens, and the
+  machine-readable AI declaration (IPTC
+  digital source type `trainedAlgorithmicMedia`) written into the EXIF
   metadata: the conversion strips the original's embedded credentials, so
   the served file carries its own markings.

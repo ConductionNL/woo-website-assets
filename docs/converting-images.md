@@ -63,21 +63,30 @@ bake the visible label into the conversion. The official EU icons live in
 [`ai-labels/`](../ai-labels/) at the repository root.
 
 Scale the label to roughly a tenth of the image width, then composite it
-into the bottom-right corner during conversion — the same command also
-writes a machine-readable AI declaration into the served file's EXIF
-metadata (the last command removes the temporary scaled label again):
+during conversion — the same command also writes a machine-readable AI
+declaration into the served file's EXIF metadata (the last command removes
+the temporary scaled label again). The example coordinates fit a
+1920 × 819 image (label top-left at 80% of the width, 46% of the height) —
+scale them along with your image:
 
 ```
-npx sharp-cli -i ../../ai-labels/label-ai-generated-black-transparent.png -o label-small.png resize 220
-npx sharp-cli -i source/jumbotron.png -o jumbotron.webp -q 80 --metadata.exif.IFD0.ImageDescription "AI-generated image (EU AI Act, Article 50); IPTC digital source type: trainedAlgorithmicMedia" composite label-small.png --gravity southeast
+npx sharp-cli -i ../../ai-labels/label-ai-generated-black-transparent.png -o label-small.png resize 192
+npx sharp-cli -i source/jumbotron.png -o jumbotron.webp -q 80 --metadata.exif.IFD0.ImageDescription "AI-generated image (EU AI Act, Article 50); IPTC digital source type: trainedAlgorithmicMedia" composite label-small.png --left 1540 --top 375
 npx rimraf label-small.png
 ```
 
-Mind the composition rules from the README: on narrow screens the template
-crops the image edges, so when the far corner might be cut off, place the
-label with explicit coordinates instead of `--gravity` (`composite
-label-small.png --left <x> --top <y>`), keeping it roughly 15% away from
-the right edge.
+Place the label at mid-height, never in a corner or against an edge. The
+template crops the image around a fixed focal point (48% from the left,
+39% from the top — see the composition rules in the README): wide screens
+show the full image width but cut off the top and bottom — depending on
+the screen, only roughly 29–54% of the image height always stays in view —
+while narrow screens cut off the sides instead. So keep the label's
+vertical centre around 40–50% of the image height, and pick a horizontally
+calm spot that keeps clear of the text card on the left; the right half of
+the image works well, since wide screens always show the full width. On
+phone-sized screens the sides are cropped away and the text card covers
+most of what remains, so no placement is phone-proof — desktop visibility
+is the priority.
 
 ## Alternatives
 
