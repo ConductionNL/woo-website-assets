@@ -11,8 +11,7 @@
 
 ## Jumbotron
 
-- **Original** (`source/jumbotron.jpg`) — taken 2025-04-16 from the
-  municipality's website
-  ([oude-ijsselstreek.nl](https://www.oude-ijsselstreek.nl/)).
+- **Original** (`source/jumbotron.jpg`) — supplied by the municipality on
+  2025-08-05.
 - **Served file** (`jumbotron.webp`) — converted by Conduction from the
   original.
